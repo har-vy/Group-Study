@@ -1,0 +1,9 @@
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+    "username": "capedcrusader",
+    "name": "Hardik Vijayvargiya",
+    "email": "vijayvargiya.hardik@gmail.com",
+    "password": "iuuhiuhfiauhf"
+}
