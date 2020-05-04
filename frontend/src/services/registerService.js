@@ -1,9 +1,10 @@
 import axios from 'axios'
 
-const baseUrl = '/register'
+const baseUrl = 'http://localhost:3001/register'
 
-const registerService = userObject => {
-    return axios.post(baseUrl, userObject)
+const register = userObject => {
+    const response = axios.post(baseUrl, userObject)
+    return response.data
 }
 
-module.exports = registerService
+export default {register}

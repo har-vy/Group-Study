@@ -6,6 +6,7 @@ const validator = require('validator')
 
 registerRouter.post('/', async (request,response) => {
     const body = request.body
+    console.log(JSON.stringify(body))
     let errors = {}
 
     if(validator.isEmpty(body.email)){
@@ -21,13 +22,16 @@ registerRouter.post('/', async (request,response) => {
         errors.username = "username is required"
     }
     if(errors.length > 0){
-        response.status(400).json(errors)
+        response.status(400).json(errors).end()
     }
     
     const user = await User.findOne({email: body.email})
     if(user){
         response.status(401).json({email: "email already exists"})
     }
+    else{
+    console.log(body.password)
+    console.log(typeof body.password)
     const saltRounds = 10
     const passwordHash = await bcrypt.hash(body.password, saltRounds)
 
@@ -40,6 +44,7 @@ registerRouter.post('/', async (request,response) => {
 
     const savedUser = await newUser.save()
     response.json(savedUser)
+}
 })
 
 module.exports = registerRouter
