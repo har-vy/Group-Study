@@ -2,9 +2,10 @@ import React from 'react'
 import registerService from '../services/registerService'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUsername, setPassword, setEmail, setName } from '../reducers/registerReducer'
+import '../styles.css'
 
 const Register = () => {
-    
+
     const dispatch = useDispatch()
     const username = useSelector(state => state.register.username)
     const password = useSelector(state => state.register.password)
@@ -15,16 +16,16 @@ const Register = () => {
         event.preventDefault()
         console.log('Handling Registration Now!')
         const userObject = {
-         name : name,
-         email: email,
-         username: username,
-         password: password
+            name: name,
+            email: email,
+            username: username,
+            password: password
         }
-    
-        const response = await registerService.register(userObject)
+
+        await registerService.register(userObject)
         console.log('Registration successful')
     }
-    
+
 
     const handleURegisterChange = (event) => {
         event.preventDefault()
@@ -46,15 +47,29 @@ const Register = () => {
         dispatch(setEmail(event.target.value))
     }
 
-    return(
-        <div>
+    return (
+        <div className="form-header">
             <h1>Register</h1>
-            <form onSubmit = {handleRegistration}>
-                <p>Name: <input name = "name"  onChange = {handleNameChange}/></p>
-                <p>Email: <input name = "email" type = "email" onChange = {handleEmailChange}/></p>
-                <p>Username: <input name = "username" onChange = {handleURegisterChange}/></p>
-                <p>Password: <input name = "password" type = "password" onChange = {handlePRegisterChange}/></p>
-                <button type = "submit">Register</button> 
+            <form onSubmit={handleRegistration} className="form">
+                <div className="form-row">
+                    <label for="name">Name</label>
+                    <input id="name" type = "text" name="name" onChange={handleNameChange} />
+                </div>
+                <div className="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" onChange={handleEmailChange} />
+                </div>
+                <div className="form-row">
+                    <label for="username">Username</label>
+                    <input id="username" type = "text" name="username" onChange={handleURegisterChange} />
+                </div>
+                <div className="form-row">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" onChange={handlePRegisterChange} />
+                </div>
+                <div className="form-row">
+                    <button type="submit">Register</button>
+                </div>
             </form>
         </div>
     )
