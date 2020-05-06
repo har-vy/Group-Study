@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBarItem from './navbaritem'
-import styles from '../../styles/homeStyles.module.css'
+import styles from '../homeStyles.module.css'
 
 const NavBar = () => {
     let d = new Date()
@@ -10,8 +10,8 @@ const NavBar = () => {
             <div className = {styles.date}>{displayDate}</div>
             <div className = {styles.links}>
                 <NavBarItem name = "Home" />
-                <div className = {styles.login}><NavBarItem name="Login" /></div>
-                <div className = {styles.register}><NavBarItem name="Register" /></div>
+                <div className = {styles.login}><NavBarItem name = "Login" /></div>
+                <div className = {styles.register}><NavBarItem name = "Register" /></div>
             </div>
         </div>
     )

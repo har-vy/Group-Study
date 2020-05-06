@@ -1,8 +1,8 @@
 import React from 'react'
-import loginService from '../services/loginService'
-import { setUsername, setPassword } from '../reducers/loginReducer'
+import loginService from '../../services/loginService'
+import { setUsername, setPassword } from '../../reducers/loginReducer'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from '../styles/styles.module.css'
+import styles from './styles.module.css'
 
 const Login = () => {
 

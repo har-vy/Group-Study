@@ -1,8 +1,8 @@
 import React from 'react'
-import registerService from '../services/registerService'
+import registerService from '../../services/registerService'
 import { useDispatch, useSelector } from 'react-redux'
-import { setUsername, setPassword, setEmail, setName } from '../reducers/registerReducer'
-import styles from '../styles/styles.module.css'
+import { setUsername, setPassword, setEmail, setName } from '../../reducers/registerReducer'
+import styles from './styles.module.css'
 
 const Register = () => {
 
