@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBarItem = props => {
     return (
-        <div className="nav-bar-item">
+        <div>
             {props.name}
         </div>
     )

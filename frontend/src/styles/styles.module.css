@@ -3,18 +3,12 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     color: #5D6063;
     background-color: #EAEDF0;
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: 16px;
-    line-height: 1.3;
-    height: 800px;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   
   .formHeader {
@@ -23,7 +17,7 @@
     border: 1px solid #D6D9DC;
     border-radius: 3px;
     
-    margin: 200px 0;
+    margin: 200px 0 0 550px;
     padding: 50px;
   }
   
@@ -65,7 +59,9 @@
   
   .formRow label {
     margin-bottom: 15px;
-  }.formRow button {
+  }
+  
+  .formRow button {
     font-size: 16px;
     font-weight: bold;
   
