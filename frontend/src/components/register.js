@@ -2,7 +2,7 @@ import React from 'react'
 import registerService from '../services/registerService'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUsername, setPassword, setEmail, setName } from '../reducers/registerReducer'
-import '../styles.css'
+import styles from '../styles/styles.module.css'
 
 const Register = () => {
 
@@ -48,26 +48,26 @@ const Register = () => {
     }
 
     return (
-        <div className="form-header">
+        <div className= {styles.formHeader}>
             <h1>Register</h1>
-            <form onSubmit={handleRegistration} className="form">
-                <div className="form-row">
+            <form onSubmit={handleRegistration} className = {styles.form}>
+                <div className = {styles.formRow}>
                     <label for="name">Name</label>
                     <input id="name" type = "text" name="name" onChange={handleNameChange} />
                 </div>
-                <div className="form-row">
+                <div className = {styles.formRow}>
                     <label for="email">Email</label>
                     <input id="email" name="email" type="email" onChange={handleEmailChange} />
                 </div>
-                <div className="form-row">
+                <div className = {styles.formRow}>
                     <label for="username">Username</label>
                     <input id="username" type = "text" name="username" onChange={handleURegisterChange} />
                 </div>
-                <div className="form-row">
+                <div className = {styles.formRow}>
                     <label for="password">Password</label>
                     <input id="password" name="password" type="password" onChange={handlePRegisterChange} />
                 </div>
-                <div className="form-row">
+                <div className = {styles.formRow}>
                     <button type="submit">Register</button>
                 </div>
             </form>

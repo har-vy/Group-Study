@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navBarContainer {
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navBar {
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .links {
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .login,
+  .register {
+      margin-left: 20px;
+  }

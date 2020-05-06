@@ -17,7 +17,7 @@
     align-items: center;
   }
   
-  .form-header {
+  .formHeader {
     text-align: center;
     background-color: #F6F7F8;
     border: 1px solid #D6D9DC;
@@ -27,7 +27,7 @@
     padding: 50px;
   }
   
-  .form-header h1 {
+  .formHeader h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
     font-size: 30px;
     margin-bottom: 20px;
@@ -43,7 +43,7 @@
     margin: 0 0 40px 0;
   }
 
-  .form-row {
+  .formRow {
     margin-bottom: 40px;
     display: flex;
     justify-content: flex-start;
@@ -51,9 +51,9 @@
     flex-wrap: wrap;
   }
   
-  .form-row input[type='text'],
-  .form-row input[type='password'],
-  .form-row input[type='email']
+  .formRow input[type='text'],
+  .formRow input[type='password'],
+  .formRow input[type='email']
    {
     background-color: #FFFFFF;
     border: 1px solid #D6D9DC;
@@ -63,9 +63,9 @@
     font-size: 14px;
   }
   
-  .form-row label {
+  .formRow label {
     margin-bottom: 15px;
-  }.form-row button {
+  }.formRow button {
     font-size: 16px;
     font-weight: bold;
   
@@ -79,24 +79,22 @@
     cursor: pointer;
   }
   
-  .form-row button:hover {
+  .formRow button:hover {
     background-color: #76AEED;
   }
   
-  .form-row button:active {
+  .formRow button:active {
     background-color: #407FC7;
   }
 
-  .form-row input[type='email']:invalid {
+  .formRow input[type='email']:invalid {
     border: 1px solid #D55C5F;
     color: #D55C5F;
     box-shadow: none; /* Remove default red glow in Firefox */
   }
 
-
-
   @media only screen and (min-width: 700px) {
-    .form-header {
+    .formHeader {
         width: max-content;
         height: max-content;
     }
@@ -104,18 +102,18 @@
         width: 600px;
         height: max-content;
     }
-    .form-row {
+    .formRow {
       flex-direction: row;
       align-items: flex-start; /* To avoid stretching */
       margin-bottom: 20px;
     }
-    .form-row input[type='text'],
-    .form-row input[type='password'],
-    .form-row input[type='email'] {
+    .formRow input[type='text'],
+    .formRow input[type='password'],
+    .formRow input[type='email'] {
         width: 250px;
         height: initial;
     }
-    .form-row label {
+    .formRow label {
       padding-left: 20px;  
       text-align: right;
       width: 120px;
@@ -123,7 +121,7 @@
       padding-right: 20px;
     }
 
-    .form-row button {
+    .formRow button {
         margin-left: 150px;
     }
   }

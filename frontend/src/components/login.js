@@ -2,7 +2,7 @@ import React from 'react'
 import loginService from '../services/loginService'
 import { setUsername, setPassword } from '../reducers/loginReducer'
 import { useDispatch, useSelector } from 'react-redux'
-import '../styles.css'
+import styles from '../styles/styles.module.css'
 
 const Login = () => {
 
@@ -31,18 +31,18 @@ const Login = () => {
     }
 
     return (
-        <div className="form-header">
+        <div className={styles.formHeader}>
             <h1>Login</h1>
-            <form onSubmit={handleLogin} className="form">
-                <div className="form-row">
+            <form onSubmit={handleLogin} className={styles.form}>
+                <div className= {styles.formRow}>
                     <label for="username">Username</label>
                     <input id="username" type="text" name="username" onChange={handleULoginChange} />
                 </div>
-                <div className="form-row">
+                <div className={styles.formRow}>
                     <label for="password">Password</label>
                     <input id="password" type="password" name="password" onChange={handlePLoginChange} />
                 </div>
-                <div className="form-row">
+                <div className={styles.formRow}>
                     <button type="submit">Submit</button>
                 </div>
             </form>
