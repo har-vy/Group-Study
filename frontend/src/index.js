@@ -7,7 +7,7 @@ import loginReducer from './reducers/loginReducer'
 import registerReducer from './reducers/registerReducer'
 
 const reducer = combineReducers({
-    login : loginReducer,
+    login: loginReducer,
     register: registerReducer
 })
 
