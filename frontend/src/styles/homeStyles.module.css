@@ -2,47 +2,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  .navBarContainer {
+}
+
+.navBarContainer {
     color: #fff;
-    background-color: #5995DA;  /* Blue */
+    background-color: #5995DA;
+    /* Blue */
     padding: 20px 0;
     display: flex;
     justify-content: center;
-  }
-  
-  .navBar {
+}
+
+.navBar {
     width: 900px;
     display: flex;
     justify-content: space-between;
-  }
+}
 
-  .links {
-      display: flex;
-      justify-content: flex-end;
-      font-size: 16px;
-      font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
-  }
+.links {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-  .login,
-  .register {
-      margin-left: 20px;
-  }
+.date {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-  .link {
+.login,
+.register {
+    margin-left: 20px;
+}
+
+.userName {
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link {
     color: whitesmoke;
-  }
-  .link:link {
+}
+
+.link:link {
     text-decoration: none;
-  }
-  .link:hover {
+}
+
+.link:hover {
     text-decoration: none;
     color: cyan;
-  }
+}
 
-  .link:active {
+.link:active {
     text-decoration: none;
     color: blue;
-  }
+}

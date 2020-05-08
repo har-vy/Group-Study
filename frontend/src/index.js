@@ -5,10 +5,12 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import loginReducer from './reducers/loginReducer'
 import registerReducer from './reducers/registerReducer'
+import userReducer from './reducers/userReducer'
 
 const reducer = combineReducers({
     login: loginReducer,
-    register: registerReducer
+    register: registerReducer,
+    user: userReducer
 })
 
 const store = createStore(reducer)

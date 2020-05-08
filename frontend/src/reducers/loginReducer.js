@@ -1,4 +1,4 @@
-const loginReducer = (state = {}, action) => {
+const loginReducer = (state = {redirect: false}, action) => {
  switch(action.type){
      case 'SET_USERNAME': {
          const newState = {
@@ -18,6 +18,27 @@ const loginReducer = (state = {}, action) => {
          const newState = {
              ...state,
              loggedIn: false
+         }
+         return newState
+     }
+     case 'SET_ERROR': {
+         const newState = {
+             ...state,
+             error: action.data.error
+         }
+         return newState
+     }
+     case 'REDIRECT': {
+         const newState = {
+             ...state,
+             redirect: !state.redirect
+         }
+         return newState
+     }
+     case 'LOGIN': {
+         const newState = {
+             ...state,
+             loggedIn: true
          }
          return newState
      }
@@ -51,6 +72,27 @@ export const setPassword = password => {
 export const logout = () => {
     return({
         type: 'LOGOUT'
+    })
+}
+
+export const login = () => {
+    return({
+        type: 'LOGIN'
+    })
+}
+
+export const setError = error => {
+    return({
+        type: 'SET_ERROR',
+        data: {
+            error: error
+        }
+    })
+}
+
+export const redirect = () => {
+    return({
+        type: 'REDIRECT'
     })
 }
 
