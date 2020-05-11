@@ -15,8 +15,13 @@ userRouter.post('/:username', async (request,response) => {
     })
 
     const savedblogPost = await blogPost.save()
-    user.blogs = user.blogs.concat(savedblogPost._id)
-    await user.save()
+
+    await User.updateOne(
+        {username: username},
+        {
+            $push: {blogs: savedblogPost._id}
+        }
+    )
     
     response.status(200).json(savedblogPost.toJSON())
 })
@@ -24,9 +29,8 @@ userRouter.post('/:username', async (request,response) => {
 // Retrieve all blogs of a specific user
 userRouter.get('/:username', async (request,response) => {
     const id = request.params.username
-    const blogs = await User.findOne({username: id}).populate('blogs')
-    
-    response.status(200).json(blogs.blogs.map(b => b.toJSON()))
+    const user = await User.findOne({username: id}).populate('blogs')
+    response.status(200).json(user)
 })
 
 
