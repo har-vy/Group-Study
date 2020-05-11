@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Editor, EditorState , convertFromRaw} from 'draft-js'
 import axios from 'axios'
-import '../../styles/userHome.module.css'
+import '../../styles/userHome.css'
 
 const UserHome = () => {
     const username = useParams().username
@@ -25,6 +25,7 @@ const UserHome = () => {
                 user.blogs.map(
                     blog => 
                     <div className = "blog" key = {blog.title}>
+                       <div className = "title">{blog.title}</div> 
                       <Editor editorState = {blog? EditorState.createWithContent(convertFromRaw(savedContent(blog.content))) 
                         : EditorState.createEmpty()} readOnly = {true} />
                     </div>

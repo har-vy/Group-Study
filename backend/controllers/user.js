@@ -11,7 +11,7 @@ userRouter.post('/:username', async (request,response) => {
     const blogPost = new BlogPost({
         title: body.title,
         content: body.content,
-        user: user.username,
+        user: user._id,
     })
 
     const savedblogPost = await blogPost.save()

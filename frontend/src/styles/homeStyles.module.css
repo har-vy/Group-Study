@@ -34,7 +34,8 @@
 }
 
 .login,
-.register {
+.register,
+.create {
     margin-left: 20px;
 }
 

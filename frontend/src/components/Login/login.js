@@ -36,7 +36,7 @@ const Login = () => {
             dispatch(setName(response.data.name))
             dispatch(setToken(response.data.token))
             localStorage.setItem('loggedInUser', response.data.token)
-            localStorage.setItem(response.data.token, response.data.name)
+            localStorage.setItem(response.data.token, response.data.username)
             console.log(JSON.stringify(response.data))
             history.push('/')
         }
