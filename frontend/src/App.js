@@ -4,6 +4,7 @@ import Register from './components/Register/register'
 import Home from './components/Home/home'
 import TextEditor from './components/User/textEditor'
 import UserHome from './components/User/userHome'
+import Blog from './components/blog'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
                     </Route>
                     <Route path='/user/:username' exact>
                       <UserHome />
+                    </Route>
+                    <Route path='/:title' exact>
+                        <Blog />
                     </Route>
                 </Switch>
             </Router>

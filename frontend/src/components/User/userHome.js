@@ -1,37 +1,40 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Editor, EditorState , convertFromRaw} from 'draft-js'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import '../../styles/userHome.css'
+import NavBar from '../Home/NavBar/navbar'
 
 const UserHome = () => {
     const username = useParams().username
-    const [ user, setUser ] = useState(null)
-    
+    const [user, setUser] = useState(null)
+    const history = useHistory()
+
     useEffect(() => {
         axios.get(`http://localhost:3001/user/${username}`)
-        .then(response => {
-            setUser(response.data)
-        })
+            .then(response => {
+                setUser(response.data)
+            })
     })
 
-    const savedContent = (content) => {
-        return JSON.parse(content)
-    }
-
-    return(
-        <div className = "blogsContainer">
-            {   user ?
+    return (
+        <div className = "container">
+            <div className = "navBarContainer">
+                <NavBar />
+            </div>
+        <div className="blogsContainer">
+            {user ?
                 user.blogs.map(
-                    blog => 
-                    <div className = "blog" key = {blog.title}>
-                       <div className = "title">{blog.title}</div> 
-                      <Editor editorState = {blog? EditorState.createWithContent(convertFromRaw(savedContent(blog.content))) 
-                        : EditorState.createEmpty()} readOnly = {true} />
-                    </div>
+                    blog =>
+                        <Link className= "link" onClick = {() => {history.push(`/${blog.title}`)}} to={`/${blog.title}`}>
+                        <div className="blog" key={blog.title}>
+                            <div className="title">{blog.title}</div>
+                            <div className="userDetails">By {user.username}</div>
+                        </div>
+                        </Link>
                 )
                 : <div>Nothing fetched yet</div>
             }
+        </div>
         </div>
     )
 }
