@@ -121,18 +121,14 @@ background-color: #407FC7;
     font-size: 14px;
     padding: 15px;
     margin-left: 10px;
+    width: 950px;
   }
   
   .RichEditor-editor {
     border-top: 1px solid #ddd;
     cursor: text;
     font-size: 16px;
-    margin-top: 10px;
   }
-   
-   .button {
-    background-color: #EAEDF0;
-   }
 
   .button button{
     font-size: 16px;
@@ -146,6 +142,8 @@ background-color: #407FC7;
   
     padding: 10px 40px;
     cursor: pointer;
+
+    margin-top: 30px;
   }
   
   .button button:hover {
@@ -188,18 +186,26 @@ background-color: #407FC7;
   }
   
   .RichEditor-controls {
+    display: flex;
     font-family: 'Helvetica', sans-serif;
     font-size: 14px;
     margin-bottom: 5px;
+    margin-left: 20px;
     user-select: none;
+    flex-wrap: wrap;
   }
   
   .RichEditor-styleButton {
-    color: #999;
+    color: whitesmoke;
     cursor: pointer;
     margin-right: 16px;
-    padding: 2px 0;
+    margin-top: 10px;
+    padding: 10px;
     display: inline-block;
+    background-color: #5995DA;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
   }
   
   .RichEditor-activeButton {

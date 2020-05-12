@@ -3,10 +3,12 @@ import registerService from '../../services/registerService'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUsername, setPassword, setEmail, setName } from '../../reducers/registerReducer'
 import styles from '../../styles/styles.module.css'
+import { useHistory } from 'react-router-dom'
 
 const Register = () => {
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const username = useSelector(state => state.register.username)
     const password = useSelector(state => state.register.password)
     const email = useSelector(state => state.register.email)
@@ -23,6 +25,7 @@ const Register = () => {
         }
 
         await registerService.register(userObject)
+        history.push('/')
         console.log('Registration successful')
     }
 

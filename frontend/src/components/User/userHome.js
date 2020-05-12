@@ -25,7 +25,7 @@ const UserHome = () => {
             {user ?
                 user.blogs.map(
                     blog =>
-                        <Link className= "link" onClick = {() => {history.push(`/${blog.title}`)}} to={`/${blog.title}`}>
+                        <Link key={blog.title} className= "link" onClick = {() => {history.push(`/${blog.title}`)}} to={`/${blog.title}`}>
                         <div className="blog" key={blog.title}>
                             <div className="title">{blog.title}</div>
                             <div className="userDetails">By {user.username}</div>

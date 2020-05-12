@@ -38,7 +38,7 @@ const Login = () => {
             localStorage.setItem('loggedInUser', response.data.token)
             localStorage.setItem(response.data.token, response.data.username)
             console.log(JSON.stringify(response.data))
-            history.push('/')
+            history.push(`/user/${username}`)
         }
     }
     return (

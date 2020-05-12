@@ -20,8 +20,11 @@ const Blog = () => {
            <div className="navBarContainer">
                <NavBar />
            </div>
+           <div className="title">
+               {title}
+           </div>
            {blog ?
-           <Editor editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(blog.content)))}/>
+           <Editor key={blog.title} editorState={EditorState.createWithContent(convertFromRaw(JSON.parse(blog.content)))}/>
            :<div>Please Wait...</div>
            }
        </div>        
