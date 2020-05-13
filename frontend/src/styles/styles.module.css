@@ -18,25 +18,24 @@
   
   .formHeader {
     text-align: center;
-    background-color: #F6F7F8;
-    border: 1px solid #D6D9DC;
-    border-radius: 3px;
-    
+    background-color: slategray;
+    border: 1px solid #2e605e;
+    border-radius: 20px;
+    color: whitesmoke;
     margin: 200px 0 0 550px;
     padding: 50px;
   }
   
   .formHeader h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    font-family: 'Roboto-Light';  
     font-size: 30px;
     margin-bottom: 20px;
   }
 
   .form {
-    background-color: #F6F7F8;
     border: 1px solid #D6D9DC;
-    border-radius: 3px;
-    
+    border-radius: 20px;
+    background-color: rgb(209, 202, 202);
     width: 80%;
     padding: 50px;
     margin: 0 0 40px 0;
@@ -59,19 +58,21 @@
     border-radius: 3px;
     width: 100%;
     padding: 7px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .formRow label {
     margin-bottom: 15px;
+    font-size: 18px;
+    color: black;
   }
   
   .formRow button {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
   
     color: #FFFFFF;
-    background-color: #5995DA;
+    background-color: black;
   
     border: none;
     border-radius: 3px;
@@ -81,11 +82,11 @@
   }
   
   .formRow button:hover {
-    background-color: #76AEED;
+    background-color: grey;
   }
   
   .formRow button:active {
-    background-color: #407FC7;
+    background-color: slategray;
   }
 
   .formRow input[type='email']:invalid {

@@ -18,6 +18,23 @@
     display: flex;
     justify-content: space-between;
 }
+.loading {
+ margin-top: 80px
+}
+.image {
+ height: 500px;
+ width: 100%;
+}
+
+.icon{
+    margin-right: 3px;
+}
+.mainLogo {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    z-index: 1;
+}
 
 .blogsContainer {
     display: flex;

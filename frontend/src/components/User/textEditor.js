@@ -8,10 +8,10 @@ import { useHistory, useParams } from 'react-router-dom'
 class RichEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editorState: EditorState.createEmpty(), title: ''};
+    this.state = { editorState: EditorState.createEmpty(), title: '' };
     console.log(this.state.title)
     this.focus = () => this.refs.editor.focus();
-    this.onChange = (editorState) => this.setState({editorState: editorState });
+    this.onChange = (editorState) => this.setState({ editorState: editorState });
 
     this.onTitleChange = (event) => {
       event.preventDefault()
@@ -66,7 +66,7 @@ class RichEditor extends React.Component {
   }
 
   render() {
-    const editorState  = this.state.editorState;
+    const editorState = this.state.editorState;
 
     // If the user changes block type before entering any text, we can
     // either style the placeholder or hide it. Let's just hide it now.
@@ -85,15 +85,19 @@ class RichEditor extends React.Component {
         </div>
         <div className="formHeader">
           <h1>Create Your Blog</h1>
-          <div className = "formRow">
-          <label htmlFor="title">Title</label>
-          <input id="title" type="text" name="title" onChange={this.onTitleChange} />
+          <div className="formRow">
+            <label htmlFor="title">Title</label>
+            <input id="title" type="text" name="title" onChange={this.onTitleChange} />
           </div>
         </div>
         <div className="RichEditor-root">
           <BlockStyleControls
             editorState={editorState}
             onToggle={this.toggleBlockType}
+          />
+          <InlineStyleControls
+            editorState={editorState}
+            onToggle={this.toggleInlineStyle}
           />
           <div className={className} onClick={this.focus}>
             <Editor
@@ -109,7 +113,7 @@ class RichEditor extends React.Component {
             />
           </div>
         </div>
-        <Button contentState={contentState}  title={this.state.title} />
+        <Button contentState={contentState} title={this.state.title} />
       </div >
     );
   }
@@ -160,11 +164,11 @@ const Button = props => {
   const username = useParams().username
   const state = JSON.stringify(convertToRaw(contentState))
   let token = localStorage.getItem('loggedInUser')
-    let history = useHistory()
+  let history = useHistory()
 
-    if (!token) {
-      history.push('/')
-    }
+  if (!token) {
+    history.push('/')
+  }
 
   const onClick = async props => {
     await blogSave(props)
@@ -188,10 +192,6 @@ const BLOCK_TYPES = [
   { label: 'UL', style: 'unordered-list-item' },
   { label: 'OL', style: 'ordered-list-item' },
   { label: 'Code Block', style: 'code-block' },
-  { label: 'Bold', style: 'BOLD' },
-  { label: 'Italic', style: 'ITALIC' },
-  { label: 'Underline', style: 'UNDERLINE' },
-  { label: 'Monospace', style: 'CODE' },
 ];
 
 const BlockStyleControls = (props) => {
@@ -208,6 +208,31 @@ const BlockStyleControls = (props) => {
         <StyleButton
           key={type.label}
           active={type.style === blockType}
+          label={type.label}
+          onToggle={props.onToggle}
+          style={type.style}
+        />
+      )}
+    </div>
+  );
+};
+
+var INLINE_STYLES = [
+  { label: 'Bold', style: 'BOLD' },
+  { label: 'Italic', style: 'ITALIC' },
+  { label: 'Underline', style: 'UNDERLINE' },
+  { label: 'Monospace', style: 'CODE' },
+];
+
+const InlineStyleControls = (props) => {
+  const currentStyle = props.editorState.getCurrentInlineStyle();
+
+  return (
+    <div className="RichEditor-controls">
+      {INLINE_STYLES.map((type) =>
+        <StyleButton
+          key={type.label}
+          active={currentStyle.has(type.style)}
           label={type.label}
           onToggle={props.onToggle}
           style={type.style}

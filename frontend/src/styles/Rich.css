@@ -17,14 +17,13 @@ justify-content: center;
 .formHeader {
 text-align: center;
 border-radius: 3px;
-
 padding: 50px;
 }
 
 .formHeader h1 {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 font-size: 30px;
-margin-bottom: 30px;
+margin-bottom: 50px;
 margin-left: 10px;
 }
 
@@ -51,13 +50,14 @@ flex-wrap: wrap;
 background-color: #FFFFFF;
 border: 1px solid #D6D9DC;
 border-radius: 3px;
-width: 100%;
+width: 200px;
 padding: 7px;
-font-size: 14px;
+font-size: 16px;
 }
 
 .formRow label {
 margin-bottom: 15px;
+font-size: 16px;
 }
 
 .formRow button {
@@ -65,10 +65,10 @@ font-size: 16px;
 font-weight: bold;
 
 color: #FFFFFF;
-background-color: #5995DA;
+background-color: rgb(36, 35, 35);
 
 border: none;
-border-radius: 3px;
+border-radius: 5px;
 
 padding: 10px 40px;
 cursor: pointer;
@@ -125,7 +125,6 @@ background-color: #407FC7;
   }
   
   .RichEditor-editor {
-    border-top: 1px solid #ddd;
     cursor: text;
     font-size: 16px;
   }
@@ -144,6 +143,7 @@ background-color: #407FC7;
     cursor: pointer;
 
     margin-top: 30px;
+    margin-bottom: 20px;
   }
   
   .button button:hover {
@@ -174,7 +174,8 @@ background-color: #407FC7;
     color: #666;
     font-family: 'Hoefler Text', 'Georgia', serif;
     font-style: italic;
-    margin: 16px 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
     padding: 10px 20px;
   }
   
@@ -193,6 +194,7 @@ background-color: #407FC7;
     margin-left: 20px;
     user-select: none;
     flex-wrap: wrap;
+    flex-direction: row;
   }
   
   .RichEditor-styleButton {
@@ -202,12 +204,13 @@ background-color: #407FC7;
     margin-top: 10px;
     padding: 10px;
     display: inline-block;
-    background-color: #5995DA;
+    background-color: rgb(36, 35, 35);
     font-weight: bold;
+    font-size: 14px;
     border: none;
     border-radius: 3px;
   }
   
   .RichEditor-activeButton {
-    color: #5890ff;
+    color: slategray;
   }

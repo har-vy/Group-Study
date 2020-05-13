@@ -6,8 +6,6 @@ import { faUser, faSignOutAlt, faSignInAlt, faHome, faPlusSquare } from "@fortaw
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const NavBar = () => {
-    let d = new Date()
-    let displayDate = (d.getDay() + 1) + '-' + (d.getMonth() + 1) + '-' + (d.getFullYear())
     let history = useHistory()
     let loggedIn = false
     let token = localStorage.getItem('loggedInUser')
@@ -28,18 +26,18 @@ const NavBar = () => {
 
     return (
         <div className={styles.navBar}>
-            <div className={styles.date}> {displayDate} </div>
+            <div className={styles.mainLogo}>StoryBoard</div>
             <div className={styles.links}>{
                 !loggedIn ?
                     <div className={styles.home}>
-                        <FontAwesomeIcon icon={faHome} />
+                        <FontAwesomeIcon icon={faHome} className={styles.icon}/>
                         <Link className={styles.link} onClick={() => history.push("/")} to="/">
                             <NavBarItem name="Home" />
                         </Link>
                     </div>
                     :
                     <div className={styles.home}>
-                        <FontAwesomeIcon icon={faHome} />
+                        <FontAwesomeIcon icon={faHome} className={styles.icon}/>
                         <Link className={styles.link} onClick={() => history.push(`/user/${name}`)} to={`/user/${name}`}>
                             <NavBarItem name="Home" />
                         </Link>
@@ -48,14 +46,14 @@ const NavBar = () => {
                 {
                     !loggedIn ?
                         <div className={styles.login}>
-                            <FontAwesomeIcon icon={faSignInAlt} />
+                            <FontAwesomeIcon icon={faSignInAlt} className={styles.icon}/>
                             <Link className={styles.link} onClick={() => history.push("/login")} to="/login">
                                 <NavBarItem name="Login" />
                             </Link>
                         </div>
                         :
                         <div className={styles.login}>
-                            <FontAwesomeIcon icon={faSignOutAlt} />
+                            <FontAwesomeIcon icon={faSignOutAlt} className={styles.icon}/>
                             <Link className={styles.link} onClick={handleLogout} to="/">
                                 <NavBarItem name="Logout" />
                             </Link>
@@ -69,15 +67,21 @@ const NavBar = () => {
                             </Link>
                         </div> :
                         <div className={styles.create}>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <FontAwesomeIcon icon={faPlusSquare} className={styles.icon}/>
                             <Link className={styles.link} onClick={() => history.push(`/user/${name}/create`)} to={`/user/${name}/create`}>
                                 <NavBarItem name="Create" />
                             </Link></div>
                 }
+                {
+                 loggedIn?   
                 <div className={styles.userName}>
-                    <FontAwesomeIcon icon={faUser} />
+
+                    <FontAwesomeIcon icon={faUser} className={styles.icon}/>
                     <NavBarItem name={name === null ? '' : `Welcome ${name}!`} />
                 </div>
+                :
+                <div></div>
+                }
             </div>
         </div>
     )

@@ -71,7 +71,7 @@ const Register = () => {
                     <input id="password" name="password" type="password" onChange={handlePRegisterChange} />
                 </div>
                 <div className = {styles.formRow}>
-                    <button type="submit">Register</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         </div>

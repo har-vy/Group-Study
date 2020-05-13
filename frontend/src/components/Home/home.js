@@ -3,6 +3,7 @@ import NavBar from './NavBar/navbar'
 import styles from '../../styles/homeStyles.module.css'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import axios from 'axios'
+import MainImage from '../../images/chalkboard-620316_1920.jpg'
 
 const Home = () => {
     const title = useParams().title
@@ -21,6 +22,7 @@ const Home = () => {
         <div className = {styles.navBarContainer}>
             <NavBar />
         </div>
+        <img src={MainImage} className={styles.image} alt=""/>
         <div className ={styles.blogsContainer}>
             {blogs ?
                 blogs.map(
